@@ -16,7 +16,7 @@ client = MongoClient(
 db = client["cooksmart"]   #Conneted Cook Smart app to the database
 collection = db["signup_infos"]
 collection1 = db['recipeAndIngredientsGenerator']
-cooksmartDirectory = 'flask demo/resnet-model-23-02-21.h5'
+cooksmartDirectory = 'resnet-model-23-02-21.h5'
 cooksmartModel = keras.models.load_model(
     cooksmartDirectory)  # loaded the cooksmart trained model
 imageSize = (224, 224)
@@ -151,7 +151,7 @@ def get_output():
         foodImage = request.files['cooksmartFood_image']
 
         # created a static folder to store the images that is being uploaded by the user
-        foodImage_path = "flask demo/static/images/" + foodImage.filename
+        foodImage_path = "static/images/" + foodImage.filename
 
         foodImage.save(foodImage_path)
         p = predict_image_class(foodImage_path)
