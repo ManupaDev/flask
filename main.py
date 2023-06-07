@@ -5,7 +5,6 @@ from tensorflow import keras
 from flask import flash
 import os
 
-
 cooksmartapp = Flask(__name__)
 bcrypt = Bcrypt(cooksmartapp)
 
